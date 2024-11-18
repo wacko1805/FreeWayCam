@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melbourne Freeway Cameras</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="DynamicWebAdapter.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Melbourne Freeway Cameras</h1>
+            <a href="index.html">Home</a>
+        </header>
+
+        <div class="cam">
+            <img id="webcam"  alt="Webcam">
+        </div>
+
+        <script>
+            // Get the current URL
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            var imgElement = document.getElementById("webcam");
+
+            // Get the value of the "link" query parameter
+            const linkValue = urlParams.get('link'); // "link" is the query parameter name
+    
+            // Check if the link parameter exists and assign it to a variable
+            if (linkValue !== null) {
+               
+                console.log("The value of 'link' parameter is:", linkValue);
+                // You can now use the 'linkValue' variable in your script
+            } else {
+                console.log("The 'link' parameter is not present in the URL.");
+            }
+
+             //set link as cam:
+             const imageUrls = [
+                linkValue,
+                ];
+                
+            function updateImages() {
+                imageUrls.forEach((url, index) => {
+                    const imgElement = document.getElementById(`webcam`);
+                    imgElement.src = `${url}?t=${Date.now()}`;
+                });
+            }
+            imgElement.src = linkValue;
+
+            setInterval(updateImages, 100);
+        </script>
+
+        </main>
+        </body>
+        </html>

@@ -1,0 +1,95 @@
+        
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            background-color: var(--background);
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: var(--primaryContainer);
+            text-align: center;
+            color: var(--primary);
+            padding: 50px 0px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin: 0;
+        }
+        
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            background-color: var(--primaryContainer);
+            padding: 50px 0px;
+            color: var(--primary);
+        }
+        a {
+            color: var(--secondary);
+        }
+        /* Main Section Styles */
+        main {
+            padding-left: 25vw;
+            padding-right: 25vw;
+        }
+
+        @media screen and (max-width: 1350px) {
+            main {
+                padding-left: 10vw;
+                padding-right: 10vw;
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+            main {
+                padding-left: 2vw;
+                padding-right: 2vw;
+            }
+        }
+
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to new rows */
+            gap: 10px; /* Optional: Adds spacing between grid items */
+        }
+
+        /* Styling for individual grid items */
+        .image-card {
+            /* padding: 20px; */
+            box-sizing: border-box;
+            flex-basis: calc(25%); /* Default for 4 columns (100% / 4 items) minus gap */
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0;
+            border: 2px solid var(--background);
+        }
+
+        .image-card:hover {
+            border: 2px solid var(--primary);
+        }
+
+        /* Media query for tablets (768px) - 3 columns */
+        @media (max-width: 1000px) {
+            .image-card {
+                flex-basis: calc(33.33% - 10px); /* 3 columns layout */
+            }
+        }
+
+        /* Media query for phones (480px or less) - 2 columns */
+        @media (max-width: 800px) {
+            .image-card {
+                flex-basis: calc(50% - 10px); /* 2 columns layout */
+            }
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
