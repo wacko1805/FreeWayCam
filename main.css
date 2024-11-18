@@ -58,6 +58,7 @@
             display: flex;
             flex-wrap: wrap; /* Allows items to wrap to new rows */
             gap: 10px; /* Optional: Adds spacing between grid items */
+            justify-content: center;
         }
 
         /* Styling for individual grid items */
